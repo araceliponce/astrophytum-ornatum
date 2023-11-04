@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/astrophytum-ornatum/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vite App</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+
+  <!-- <link rel="stylesheet" href="/src/styles.min.css"> -->
+  <script type="module" crossorigin src="/astrophytum-ornatum/assets/index-9c3dc8b3.js"></script>
+  <link rel="stylesheet" href="/astrophytum-ornatum/assets/index-a6530cfd.css">
+</head>
+
+<body>
+  <div id="app" class="bg-light"></div>
+  
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+
+      let progressBarVisible = false;
+
+      function toggleProgressBar() {
+        progressBarVisible = !progressBarVisible;
+        const progressContainer = document.getElementById("progressContainer");
+
+        if (progressBarVisible) {
+          // Show the progress bar and animate it
+          progressContainer.style.display = "block";
+          animateProgressBar(0, 90); // Change 0 to your base percentage and 90 to your desired percentage
+        } else {
+          // Hide the progress bar
+          progressContainer.style.display = "none";
+          progressBar.style.width = "0%";
+
+        }
+      }
+
+      function animateProgressBar(basePercentage, desiredPercentage) {
+        const progressBar = document.getElementById("progressBar");
+        let width = basePercentage;
+
+        const interval = setInterval(function () {
+          if (width >= desiredPercentage) {
+            clearInterval(interval);
+          } else {
+            width = width + 10;
+            progressBar.style.width = width + "%";
+            // progressBar.innerHTML = width + "%";
+          }
+        }, 10);
+      }
+
+
+    })
+
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      var tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      );
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+
+
+      function goToTab() {
+        window.scrollTo({
+          top:
+            heightToTop(document.getElementsByClassName("tab-content")[0]) - 70,
+          behavior: "smooth",
+        });
+      }
+
+
+
+
+
+      var forms = document.querySelectorAll(".needs-validation");
+      Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener(
+          "submit",
+
+          function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+
+            form.classList.add("was-validated");
+          },
+          false
+        );
+      });
+
+
+    })
+  </script>
+
+
+  
+
+</body>
+
+</html>
